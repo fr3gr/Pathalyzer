@@ -48,7 +48,7 @@ Projekt został stworzony w Visual Studio 2022 i jest gotowy do kompilacji.
 
 1.  Sklonuj repozytorium na swój dysk:
     ```sh
-    git clone [adres-twojego-repozytorium]
+    git clone https://github.com/fr3gr/PingTester.git
     ```
 2.  Otwórz plik rozwiązania (`PingTester.sln`) w programie Visual Studio.
 3.  Upewnij się, że wszystkie zależności (jeśli istnieją) zostały przywrócone.
