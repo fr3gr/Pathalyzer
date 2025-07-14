@@ -19,249 +19,256 @@
 
         private void InitializeComponent()
         {
-            var darkBg = System.Drawing.Color.FromArgb(28, 28, 28);
-            var cardBg = System.Drawing.Color.FromArgb(45, 45, 48);
-            var controlBg = System.Drawing.Color.FromArgb(63, 63, 70);
-            var text = System.Drawing.Color.FromArgb(241, 241, 241);
-            var textSubtle = System.Drawing.Color.FromArgb(150, 150, 150);
-            var accent = System.Drawing.Color.FromArgb(0, 122, 204);
-
-            this.components = new System.ComponentModel.Container();
-            this.comboHosts = new System.Windows.Forms.ComboBox();
-            this.txtOutput = new System.Windows.Forms.RichTextBox();
-            this.btnPing = new System.Windows.Forms.Button();
-            this.numCount = new System.Windows.Forms.NumericUpDown();
-            this.txtCustom = new System.Windows.Forms.TextBox();
-            this.lblInfo = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.chkAutoPing = new System.Windows.Forms.CheckBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnOpenLog = new System.Windows.Forms.Button();
-            this.btnOpenCsv = new System.Windows.Forms.Button();
-            this.btnSpeedTest = new System.Windows.Forms.Button();
-            this.lblDownload = new System.Windows.Forms.Label();
-            this.lblUpload = new System.Windows.Forms.Label();
-            this.lblPing = new System.Windows.Forms.Label();
-
-            ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
-            this.SuspendLayout();
-
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = darkBg;
-            this.ClientSize = new System.Drawing.Size(824, 541);
-            this.Controls.Add(this.lblInfo);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.lblUpload);
-            this.Controls.Add(this.lblDownload);
-            this.Controls.Add(this.lblPing);
-            this.Controls.Add(this.btnSpeedTest);
-            this.Controls.Add(this.btnOpenCsv);
-            this.Controls.Add(this.btnOpenLog);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.chkAutoPing);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnPing);
-            this.Controls.Add(this.numCount);
-            this.Controls.Add(this.txtCustom);
-            this.Controls.Add(this.comboHosts);
-            this.Controls.Add(this.txtOutput);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ForeColor = text;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ping & Net Tester";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            comboHosts = new ComboBox();
+            txtOutput = new RichTextBox();
+            btnPing = new Button();
+            numCount = new NumericUpDown();
+            txtCustom = new TextBox();
+            lblInfo = new Label();
+            btnCancel = new Button();
+            progressBar = new ProgressBar();
+            chkAutoPing = new CheckBox();
+            btnClear = new Button();
+            btnOpenLog = new Button();
+            btnOpenCsv = new Button();
+            btnSpeedTest = new Button();
+            lblDownload = new Label();
+            lblUpload = new Label();
+            lblPing = new Label();
+            ((System.ComponentModel.ISupportInitialize)numCount).BeginInit();
+            SuspendLayout();
             // 
             // comboHosts
             // 
-            this.comboHosts.BackColor = controlBg;
-            this.comboHosts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboHosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboHosts.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboHosts.ForeColor = text;
-            this.comboHosts.FormattingEnabled = true;
-            this.comboHosts.Items.AddRange(new object[] { "Domyślne DNS", "8.8.8.8", "1.1.1.1", "9.9.9.9", "208.67.222.222", "8.8.4.4" });
-            this.comboHosts.Location = new System.Drawing.Point(22, 23);
-            this.comboHosts.Name = "comboHosts";
-            this.comboHosts.Size = new System.Drawing.Size(150, 25);
-            // 
-            // txtCustom
-            // 
-            this.txtCustom.BackColor = controlBg;
-            this.txtCustom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCustom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtCustom.ForeColor = text;
-            this.txtCustom.Location = new System.Drawing.Point(182, 23);
-            this.txtCustom.Name = "txtCustom";
-            this.txtCustom.Size = new System.Drawing.Size(200, 25);
-            this.txtCustom.PlaceholderText = "lub wpisz własny host...";
-            // 
-            // numCount
-            // 
-            this.numCount.BackColor = controlBg;
-            this.numCount.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numCount.ForeColor = text;
-            this.numCount.Location = new System.Drawing.Point(392, 23);
-            this.numCount.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
-            this.numCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            this.numCount.Name = "numCount";
-            this.numCount.Size = new System.Drawing.Size(50, 25);
-            this.numCount.Value = new decimal(new int[] { 4, 0, 0, 0 });
-            // 
-            // btnPing
-            // 
-            this.btnPing.BackColor = accent;
-            this.btnPing.FlatAppearance.BorderSize = 0;
-            this.btnPing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPing.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPing.Location = new System.Drawing.Point(452, 21);
-            this.btnPing.Name = "btnPing";
-            this.btnPing.Size = new System.Drawing.Size(110, 30);
-            this.btnPing.Text = "PING 🌐";
-            this.btnPing.UseVisualStyleBackColor = false;
-            this.btnPing.Click += new System.EventHandler(this.btnPing_Click);
-            // 
-            // btnSpeedTest
-            // 
-            this.btnSpeedTest.BackColor = accent;
-            this.btnSpeedTest.FlatAppearance.BorderSize = 0;
-            this.btnSpeedTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSpeedTest.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSpeedTest.Location = new System.Drawing.Point(588, 21);
-            this.btnSpeedTest.Name = "btnSpeedTest";
-            this.btnSpeedTest.Size = new System.Drawing.Size(212, 30);
-            this.btnSpeedTest.Text = "SPEED TEST ⚡";
-            this.btnSpeedTest.UseVisualStyleBackColor = false;
-            this.btnSpeedTest.Click += new System.EventHandler(this.btnSpeedTest_Click);
-            // 
-            // chkAutoPing
-            // 
-            this.chkAutoPing.AutoSize = true;
-            this.chkAutoPing.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.chkAutoPing.Location = new System.Drawing.Point(24, 73);
-            this.chkAutoPing.Name = "chkAutoPing";
-            this.chkAutoPing.Size = new System.Drawing.Size(124, 19);
-            this.chkAutoPing.Text = "Pinguj cyklicznie 🔄";
-            this.chkAutoPing.UseVisualStyleBackColor = true;
-            this.chkAutoPing.CheckedChanged += new System.EventHandler(this.chkAutoPing_CheckedChanged);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = controlBg;
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnClear.Location = new System.Drawing.Point(260, 68);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(85, 28);
-            this.btnClear.Text = "Wyczyść 🗑️";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnOpenLog
-            // 
-            this.btnOpenLog.BackColor = controlBg;
-            this.btnOpenLog.FlatAppearance.BorderSize = 0;
-            this.btnOpenLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenLog.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnOpenLog.Location = new System.Drawing.Point(355, 68);
-            this.btnOpenLog.Name = "btnOpenLog";
-            this.btnOpenLog.Size = new System.Drawing.Size(100, 28);
-            this.btnOpenLog.Text = "Otwórz Log 📝";
-            this.btnOpenLog.UseVisualStyleBackColor = false;
-            this.btnOpenLog.Click += new System.EventHandler(this.btnOpenLog_Click);
-            // 
-            // btnOpenCsv
-            // 
-            this.btnOpenCsv.BackColor = controlBg;
-            this.btnOpenCsv.FlatAppearance.BorderSize = 0;
-            this.btnOpenCsv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenCsv.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnOpenCsv.Location = new System.Drawing.Point(465, 68);
-            this.btnOpenCsv.Name = "btnOpenCsv";
-            this.btnOpenCsv.Size = new System.Drawing.Size(100, 28);
-            this.btnOpenCsv.Text = "Otwórz CSV 📊";
-            this.btnOpenCsv.UseVisualStyleBackColor = false;
-            this.btnOpenCsv.Click += new System.EventHandler(this.btnOpenCsv_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(164, 68);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 28);
-            this.btnCancel.Text = "Anuluj 🛑";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // lblDownload
-            // 
-            this.lblDownload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDownload.ForeColor = System.Drawing.Color.Gold;
-            this.lblDownload.Location = new System.Drawing.Point(588, 62);
-            this.lblDownload.Name = "lblDownload";
-            this.lblDownload.Size = new System.Drawing.Size(212, 20);
-            this.lblDownload.Text = "Download: -";
-            // 
-            // lblUpload
-            // 
-            this.lblUpload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUpload.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblUpload.Location = new System.Drawing.Point(588, 87);
-            this.lblUpload.Name = "lblUpload";
-            this.lblUpload.Size = new System.Drawing.Size(212, 20);
-            this.lblUpload.Text = "Upload: -";
-            // 
-            // lblPing
-            // 
-            this.lblPing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPing.ForeColor = System.Drawing.Color.LawnGreen;
-            this.lblPing.Location = new System.Drawing.Point(588, 112);
-            this.lblPing.Name = "lblPing";
-            this.lblPing.Size = new System.Drawing.Size(212, 20);
-            this.lblPing.Text = "Ping: -";
+            comboHosts.BackColor = Color.FromArgb(63, 63, 70);
+            comboHosts.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboHosts.FlatStyle = FlatStyle.Flat;
+            comboHosts.Font = new Font("Segoe UI", 10F);
+            comboHosts.ForeColor = Color.FromArgb(241, 241, 241);
+            comboHosts.FormattingEnabled = true;
+            comboHosts.Items.AddRange(new object[] { "Domyślne DNS", "8.8.8.8", "1.1.1.1", "9.9.9.9", "208.67.222.222", "8.8.4.4" });
+            comboHosts.Location = new Point(22, 23);
+            comboHosts.Name = "comboHosts";
+            comboHosts.Size = new Size(150, 25);
+            comboHosts.TabIndex = 14;
             // 
             // txtOutput
             // 
-            this.txtOutput.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
-            this.txtOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOutput.Font = new System.Drawing.Font("Consolas", 10F);
-            this.txtOutput.ForeColor = System.Drawing.Color.FromArgb(220, 220, 220);
-            this.txtOutput.Location = new System.Drawing.Point(12, 142);
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(800, 360);
-            this.txtOutput.Text = "Witaj w Ping & Net Tester! Kliknij PING lub SPEED TEST, aby rozpocząć.";
+            txtOutput.BackColor = Color.FromArgb(20, 20, 20);
+            txtOutput.BorderStyle = BorderStyle.None;
+            txtOutput.Font = new Font("Consolas", 10F);
+            txtOutput.ForeColor = Color.FromArgb(220, 220, 220);
+            txtOutput.Location = new Point(12, 142);
+            txtOutput.Name = "txtOutput";
+            txtOutput.ReadOnly = true;
+            txtOutput.Size = new Size(800, 360);
+            txtOutput.TabIndex = 15;
+            txtOutput.Text = "Witaj w Ping & Net Tester! Kliknij PING lub SPEED TEST, aby rozpocząć.";
             // 
-            // progressBar
+            // btnPing
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 512);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(800, 5);
+            btnPing.BackColor = Color.FromArgb(0, 122, 204);
+            btnPing.FlatAppearance.BorderSize = 0;
+            btnPing.FlatStyle = FlatStyle.Flat;
+            btnPing.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnPing.Location = new Point(452, 21);
+            btnPing.Name = "btnPing";
+            btnPing.Size = new Size(110, 30);
+            btnPing.TabIndex = 11;
+            btnPing.Text = "PING 🌐";
+            btnPing.UseVisualStyleBackColor = false;
+            btnPing.Click += btnPing_Click;
+            // 
+            // numCount
+            // 
+            numCount.BackColor = Color.FromArgb(63, 63, 70);
+            numCount.Font = new Font("Segoe UI", 10F);
+            numCount.ForeColor = Color.FromArgb(241, 241, 241);
+            numCount.Location = new Point(392, 23);
+            numCount.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
+            numCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numCount.Name = "numCount";
+            numCount.Size = new Size(50, 25);
+            numCount.TabIndex = 12;
+            numCount.Value = new decimal(new int[] { 4, 0, 0, 0 });
+            // 
+            // txtCustom
+            // 
+            txtCustom.BackColor = Color.FromArgb(63, 63, 70);
+            txtCustom.BorderStyle = BorderStyle.FixedSingle;
+            txtCustom.Font = new Font("Segoe UI", 10F);
+            txtCustom.ForeColor = Color.FromArgb(241, 241, 241);
+            txtCustom.Location = new Point(182, 23);
+            txtCustom.Name = "txtCustom";
+            txtCustom.PlaceholderText = "lub wpisz własny host...";
+            txtCustom.Size = new Size(200, 25);
+            txtCustom.TabIndex = 13;
             // 
             // lblInfo
             // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.lblInfo.ForeColor = textSubtle;
-            this.lblInfo.Location = new System.Drawing.Point(12, 522);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(256, 13);
-            this.lblInfo.Text = "Wyniki są zapisywane do ping_log.txt i ping_results.csv";
+            lblInfo.AutoSize = true;
+            lblInfo.Font = new Font("Segoe UI", 8F);
+            lblInfo.ForeColor = Color.FromArgb(150, 150, 150);
+            lblInfo.Location = new Point(12, 522);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(290, 13);
+            lblInfo.TabIndex = 0;
+            lblInfo.Text = "Wyniki są zapisywane do ping_log.txt i ping_results.csv";
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(192, 57, 43);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnCancel.Location = new Point(164, 68);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(85, 28);
+            btnCancel.TabIndex = 10;
+            btnCancel.Text = "Anuluj \U0001f6d1";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // progressBar
+            // 
+            progressBar.Location = new Point(12, 512);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(800, 5);
+            progressBar.TabIndex = 1;
+            // 
+            // chkAutoPing
+            // 
+            chkAutoPing.AutoSize = true;
+            chkAutoPing.Font = new Font("Segoe UI", 9F);
+            chkAutoPing.Location = new Point(24, 73);
+            chkAutoPing.Name = "chkAutoPing";
+            chkAutoPing.Size = new Size(129, 19);
+            chkAutoPing.TabIndex = 9;
+            chkAutoPing.Text = "Pinguj cyklicznie 🔄";
+            chkAutoPing.UseVisualStyleBackColor = true;
+            chkAutoPing.CheckedChanged += chkAutoPing_CheckedChanged;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.FromArgb(63, 63, 70);
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Segoe UI Semibold", 9F);
+            btnClear.Location = new Point(260, 68);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(85, 28);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Wyczyść 🗑️";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnOpenLog
+            // 
+            btnOpenLog.BackColor = Color.FromArgb(63, 63, 70);
+            btnOpenLog.FlatAppearance.BorderSize = 0;
+            btnOpenLog.FlatStyle = FlatStyle.Flat;
+            btnOpenLog.Font = new Font("Segoe UI Semibold", 9F);
+            btnOpenLog.Location = new Point(355, 68);
+            btnOpenLog.Name = "btnOpenLog";
+            btnOpenLog.Size = new Size(100, 28);
+            btnOpenLog.TabIndex = 7;
+            btnOpenLog.Text = "Otwórz Log 📝";
+            btnOpenLog.UseVisualStyleBackColor = false;
+            btnOpenLog.Click += btnOpenLog_Click;
+            // 
+            // btnOpenCsv
+            // 
+            btnOpenCsv.BackColor = Color.FromArgb(63, 63, 70);
+            btnOpenCsv.FlatAppearance.BorderSize = 0;
+            btnOpenCsv.FlatStyle = FlatStyle.Flat;
+            btnOpenCsv.Font = new Font("Segoe UI Semibold", 9F);
+            btnOpenCsv.Location = new Point(465, 68);
+            btnOpenCsv.Name = "btnOpenCsv";
+            btnOpenCsv.Size = new Size(100, 28);
+            btnOpenCsv.TabIndex = 6;
+            btnOpenCsv.Text = "Otwórz CSV 📊";
+            btnOpenCsv.UseVisualStyleBackColor = false;
+            btnOpenCsv.Click += btnOpenCsv_Click;
+            // 
+            // btnSpeedTest
+            // 
+            btnSpeedTest.BackColor = Color.FromArgb(0, 122, 204);
+            btnSpeedTest.FlatAppearance.BorderSize = 0;
+            btnSpeedTest.FlatStyle = FlatStyle.Flat;
+            btnSpeedTest.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnSpeedTest.Location = new Point(588, 21);
+            btnSpeedTest.Name = "btnSpeedTest";
+            btnSpeedTest.Size = new Size(212, 30);
+            btnSpeedTest.TabIndex = 5;
+            btnSpeedTest.Text = "SPEED TEST ⚡";
+            btnSpeedTest.UseVisualStyleBackColor = false;
+            btnSpeedTest.Click += btnSpeedTest_Click;
+            // 
+            // lblDownload
+            // 
+            lblDownload.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblDownload.ForeColor = Color.Gold;
+            lblDownload.Location = new Point(588, 62);
+            lblDownload.Name = "lblDownload";
+            lblDownload.Size = new Size(212, 20);
+            lblDownload.TabIndex = 3;
+            lblDownload.Text = "Download: -";
+            // 
+            // lblUpload
+            // 
+            lblUpload.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblUpload.ForeColor = Color.DeepSkyBlue;
+            lblUpload.Location = new Point(588, 87);
+            lblUpload.Name = "lblUpload";
+            lblUpload.Size = new Size(212, 20);
+            lblUpload.TabIndex = 2;
+            lblUpload.Text = "Upload: -";
+            // 
+            // lblPing
+            // 
+            lblPing.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblPing.ForeColor = Color.LawnGreen;
+            lblPing.Location = new Point(588, 112);
+            lblPing.Name = "lblPing";
+            lblPing.Size = new Size(212, 20);
+            lblPing.TabIndex = 4;
+            lblPing.Text = "Ping: -";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(28, 28, 28);
+            ClientSize = new Size(824, 541);
+            Controls.Add(lblInfo);
+            Controls.Add(progressBar);
+            Controls.Add(lblUpload);
+            Controls.Add(lblDownload);
+            Controls.Add(lblPing);
+            Controls.Add(btnSpeedTest);
+            Controls.Add(btnOpenCsv);
+            Controls.Add(btnOpenLog);
+            Controls.Add(btnClear);
+            Controls.Add(chkAutoPing);
+            Controls.Add(btnCancel);
+            Controls.Add(btnPing);
+            Controls.Add(numCount);
+            Controls.Add(txtCustom);
+            Controls.Add(comboHosts);
+            Controls.Add(txtOutput);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            ForeColor = Color.FromArgb(241, 241, 241);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Ping & Net Tester";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)numCount).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
