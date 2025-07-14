@@ -312,7 +312,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:PathalyzerSetup"
+        "ProductName" = "8:Pathalyzer"
         "ProductCode" = "8:{613FDE2F-C125-4095-AB82-F775E14FE42D}"
         "PackageCode" = "8:{B4512528-1327-47C6-947B-B7BDAE5B5738}"
         "UpgradeCode" = "8:{AD26A25F-9518-4F04-9C21-9410E000F394}"
